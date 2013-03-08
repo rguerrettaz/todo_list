@@ -46,7 +46,7 @@ end
 # Task.delete(array[0])
 
 
-puts Task.all
+# puts Task.all
 
 # array = [25, 50, 100]
 
