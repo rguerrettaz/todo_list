@@ -1,3 +1,3 @@
 100.times do
-  Student.create(:name => 'Hi', :email => 'balh@blah.com')
+  Task.create(:task => 'Complete this awesome task.')
 end
