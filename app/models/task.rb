@@ -19,7 +19,7 @@ class Task < ActiveRecord::Base
   end
 
   def self.complete(id_num)
-    self.update(id_num, :deleted_at => Time.now)
+    self.update(id_num, :completed_at => DateTime.now)
   end
 
   def self.uncomplete(id_num)
@@ -27,7 +27,7 @@ class Task < ActiveRecord::Base
   end
   
   def self.delete(id_num)
-    self.update(id_num, :deleted_at => Time.now)
+    self.update(id_num, :deleted_at => DateTime.now)
   end
 
 end
@@ -46,7 +46,7 @@ end
 # Task.delete(array[0])
 
 
-puts Task.all
+# puts Task.add
 
 # array = [25, 50, 100]
 
