@@ -46,8 +46,6 @@ end
 # Task.delete(array[0])
 
 
-# puts Task.add
-
 # array = [25, 50, 100]
 
 # array.each do |i|
