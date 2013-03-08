@@ -1,3 +1,3 @@
-100.times do
-  Task.create(:task => 'Complete this awesome task.')
+10.times do
+  Task.create(:content => 'Complete this awesome task.')
 end

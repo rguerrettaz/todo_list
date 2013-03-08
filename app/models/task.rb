@@ -1,6 +1,7 @@
 require_relative '../../config/application'
 require 'date'
 
+
 class Task < ActiveRecord::Base
 
   def self.add(task)
@@ -14,13 +15,16 @@ class Task < ActiveRecord::Base
   # self.all
 
   def self.completed
-    self.where(:complete_at != nil)
+    self.where(:completed_at != nil)
   end
 
   def self.complete(id_num)
     self.update(id_num, :deleted_at => Time.now)
   end
 
+  def self.uncomplete(id_num)
+    self.update(id_num, :completed_at => nil)  
+  end
   
   def self.delete(id_num)
     self.update(id_num, :deleted_at => Time.now)
@@ -42,6 +46,7 @@ end
 # Task.delete(array[0])
 
 
+puts Task.all
 
 # array = [25, 50, 100]
 
@@ -58,4 +63,4 @@ end
 # array[0] => 323
 
 
-p Task.completed
+# p Task.completed
