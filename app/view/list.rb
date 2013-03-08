@@ -1,6 +1,7 @@
+require_relative '../../config/application'
 require 'pp'
 
-require_relative '../models/task'
+# require_relative '../models/task'
 
 class List
 

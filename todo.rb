@@ -50,4 +50,9 @@ class ListBusiness
   end
 end
 
-ListBusiness.parse(ARGV)
+list = Task.all
+p list.class
+p list
+
+
+# ListBusiness.parse(ARGV)

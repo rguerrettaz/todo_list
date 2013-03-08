@@ -1,4 +1,4 @@
-require_relative '../../config/application'
+# require_relative '../../config/application'
 require 'date'
 
 
@@ -12,8 +12,6 @@ class Task < ActiveRecord::Base
     self.update(id_num, :content=>task)
   end
   
-  # self.all
-
   def self.completed
     self.where(:completed_at != nil)
   end
@@ -31,34 +29,3 @@ class Task < ActiveRecord::Base
   end
 
 end
-
-# p Task.update_view_id
-
-# Task.all.each_with_index do |task, i|
-#   p "#{task.id}. #{task.completed_at = nil ? '[x]' : '[ ]'} #{task.content}"
-#   #"#{i+1}. #{task.completed_at = nil ? '[x]' : '[ ]'} #{task.task}"
-# end
-# p Task.add("Scrub the kitchen floor")
-# p Task.update_item(1, "WASHO YO MOUTH")
-# p Task.update()
-
-
-# Task.delete(array[0])
-
-
-# array = [25, 50, 100]
-
-# array.each do |i|
-
-# end
-
-
-#MAP ID TO VIEW DISPLAY ID
-# array = []
-# Task.all.each do |task|
-#   array << task.id
-# end
-# array[0] => 323
-
-
-# p Task.completed
