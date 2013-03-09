@@ -20,7 +20,7 @@ class Task < ActiveRecord::Base
   end
   
   def self.completed
-    self.all.reject(:completed_at != nil)
+    self.all.reject { |row| row.completed_at == nil }
   end
 
   def self.complete(id_num)
