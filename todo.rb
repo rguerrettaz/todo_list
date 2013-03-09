@@ -10,8 +10,13 @@ class ListBusiness
   def self.parse(args)
     #map ids in array
     map_id()
+
+    # p @@task_map_id
     #get class array @@task_map_id value
-    id = @@task_map_id[args[1]-1]
+    if args[1].to_i.is_a? Integer
+      id = @@task_map_id[args[1].to_i-1]
+    
+    end
 
     case args[0]
     
@@ -36,7 +41,7 @@ class ListBusiness
   end
 
   def self.display_all
-    List.display(Task.all)
+    List.display(Task.all_less_deleted)
   end
 
   def self.display_completed
@@ -44,7 +49,7 @@ class ListBusiness
   end
 
   def self.map_id
-    Task.all.each do |task|
+    Task..all_less_deleted.each do |task|
       @@task_map_id << task.id
     end
   end
