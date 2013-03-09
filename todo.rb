@@ -49,7 +49,7 @@ class ListBusiness
   end
 
   def self.map_id
-    Task..all_less_deleted.each do |task|
+    Task.all_less_deleted.each do |task|
       @@task_map_id << task.id
     end
   end

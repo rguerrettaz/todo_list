@@ -1,4 +1,4 @@
-# require_relative '../../config/application'
+
 require 'date'
 
 
@@ -11,9 +11,16 @@ class Task < ActiveRecord::Base
   def self.update_item(id_num, task)
     self.update(id_num, :content=>task)
   end
+
+  def self.all_less_deleted
+
+    self.all.reject { |row| row.deleted_at != nil }
+    # self.where("deleted_at = ''")
+    # self.where('deleted_at' => nil)
+  end
   
   def self.completed
-    self.where(:completed_at != nil)
+    self.all.reject(:completed_at != nil)
   end
 
   def self.complete(id_num)

@@ -5,12 +5,9 @@ require 'pp'
 
 class List
 
-  attr_reader :array
-
-  def display_list(list)
-    list.each_with_index do |task, i|
-      p "#{task.id}. #{task.completed_at == nil ? '[ ]' : '[x]'} #{task.content}"
-      #"#{i+1}. #{task.completed_at = nil ? '[x]' : '[ ]'} #{task.task}"
+  def self.display(array)
+    array.each_with_index do |task, i|
+      puts "#{(i+1).to_s.rjust(2)}.  #{task.completed_at == nil ? '[ ]' : '[x]'} #{task.content}"
     end
   end
 end
